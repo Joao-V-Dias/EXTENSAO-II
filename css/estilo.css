@@ -1,0 +1,359 @@
+/* Prato Cheio — CSS puro, sem framework.
+   Público-alvo: 55-70 anos + voluntários pontuais + hardware fraco.
+   Prioridades: fontes grandes, botões grandes, poucas cores, alto contraste. */
+
+:root {
+  --cor-primaria: #2e7d32;
+  --cor-primaria-escura: #1b5e20;
+  --cor-fundo: #f5f5f0;
+  --cor-cartao: #ffffff;
+  --cor-texto: #1a1a1a;
+  --cor-texto-secundario: #555555;
+  --cor-borda: #d0d0c8;
+  --cor-alerta: #b45309;
+  --cor-alerta-fundo: #fff3e0;
+  --cor-perigo: #b3261e;
+  --cor-sucesso: #2e7d32;
+  --cor-sucesso-fundo: #e8f5e9;
+  --fonte-base: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--fonte-base);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  color: var(--cor-primaria-escura);
+  line-height: 1.2;
+}
+
+h1 { font-size: 1.8rem; margin: 0 0 0.25rem; }
+h2 { font-size: 1.4rem; margin: 0 0 1rem; }
+
+p { margin: 0.5rem 0; }
+
+/* ---- Formulários ---- */
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+}
+
+label.linha-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: normal;
+}
+
+label.linha-checkbox input {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="url"] {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 2px solid var(--cor-borda);
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+input:focus {
+  outline: 3px solid var(--cor-primaria);
+  outline-offset: 1px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.botao-grande {
+  display: inline-block;
+  background: var(--cor-primaria);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.9rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-height: 48px;
+}
+
+.botao-grande:hover, .botao-grande:focus {
+  background: var(--cor-primaria-escura);
+}
+
+.botao-secundario {
+  background: white;
+  color: var(--cor-primaria-escura);
+  border: 2px solid var(--cor-primaria);
+  border-radius: 10px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.botao-perigo {
+  background: white;
+  color: var(--cor-perigo);
+  border: 2px solid var(--cor-perigo);
+  border-radius: 10px;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  min-height: 44px;
+}
+
+.botao-link {
+  background: none;
+  border: none;
+  color: var(--cor-primaria-escura);
+  text-decoration: underline;
+  font-size: 1rem;
+  padding: 0.4rem;
+}
+
+.botoes-form, .botoes-linha {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 0.6rem;
+}
+
+.mensagem-erro {
+  color: var(--cor-perigo);
+  font-weight: 600;
+}
+
+.mensagem-info {
+  color: var(--cor-texto-secundario);
+  font-size: 0.9rem;
+}
+
+.mensagem-alerta {
+  background: var(--cor-alerta-fundo);
+  border: 2px solid var(--cor-alerta);
+  color: var(--cor-alerta);
+  font-weight: 600;
+}
+
+/* ---- Layout geral ---- */
+
+.tela-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.cartao-login {
+  max-width: 420px;
+  width: 100%;
+}
+
+.subtitulo {
+  color: var(--cor-texto-secundario);
+  margin-bottom: 1.5rem;
+}
+
+.cartao {
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.cabecalho {
+  background: var(--cor-cartao);
+  border-bottom: 1px solid var(--cor-borda);
+  padding: 0.8rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.cabecalho-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cabecalho-rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--cor-texto-secundario);
+}
+
+.nav-principal {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 0.7rem 0 0.2rem;
+}
+
+.link-nav {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--cor-primaria-escura);
+  font-weight: 700;
+  background: var(--cor-fundo);
+  border: 2px solid transparent;
+}
+
+.link-nav-ativo {
+  border-color: var(--cor-primaria);
+  background: var(--cor-sucesso-fundo);
+}
+
+.conteudo {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.indicador-rede {
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+
+.indicador-online {
+  background: var(--cor-sucesso-fundo);
+  color: var(--cor-sucesso);
+}
+
+.indicador-offline {
+  background: var(--cor-alerta-fundo);
+  color: var(--cor-alerta);
+}
+
+/* ---- Listas e etiquetas ---- */
+
+.linha-familia, .linha-estoque {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.linha-atendida {
+  opacity: 0.75;
+}
+
+.detalhe-secundario {
+  color: var(--cor-texto-secundario);
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--cor-fundo);
+  color: var(--cor-texto-secundario);
+  margin-left: 0.4rem;
+}
+
+.etiqueta-alerta {
+  background: var(--cor-alerta-fundo);
+  color: var(--cor-alerta);
+}
+
+.etiqueta-perigo {
+  background: #fdecea;
+  color: var(--cor-perigo);
+}
+
+.etiqueta-sucesso {
+  background: var(--cor-sucesso-fundo);
+  color: var(--cor-sucesso);
+}
+
+.campo-busca {
+  margin-top: 1rem;
+}
+
+.tabela-relatorio {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--cor-cartao);
+  margin: 1rem 0;
+}
+
+.tabela-relatorio th, .tabela-relatorio td {
+  border: 1px solid var(--cor-borda);
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.tabela-relatorio th {
+  background: var(--cor-fundo);
+}
+
+/* ---- Responsivo (celulares) ---- */
+
+@media (max-width: 480px) {
+  :root {
+    --fonte-base: 17px;
+  }
+
+  .linha-familia, .linha-estoque {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .botoes-linha {
+    justify-content: stretch;
+  }
+
+  .botoes-linha button {
+    flex: 1;
+  }
+
+  .tabela-relatorio {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}

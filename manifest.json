@@ -1,0 +1,26 @@
+{
+  "name": "Prato Cheio",
+  "short_name": "Prato Cheio",
+  "description": "Gestão de cestas básicas, estoque e entregas da Associação Prato Cheio",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f5f5f0",
+  "theme_color": "#2e7d32",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

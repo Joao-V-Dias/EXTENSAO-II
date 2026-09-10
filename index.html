@@ -1,0 +1,57 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Prato Cheio</title>
+<meta name="description" content="Gestão de cestas básicas, estoque e entregas — Associação Prato Cheio" />
+<meta name="theme-color" content="#2e7d32" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="stylesheet" href="css/estilo.css" />
+
+<div id="tela-login" class="tela-login" hidden>
+  <div class="cartao cartao-login">
+    <h1>Prato Cheio</h1>
+    <p class="subtitulo">Gestão de cestas, estoque e entregas</p>
+    <form id="form-login">
+      <label>E-mail
+        <input type="email" id="login-email" required autocomplete="username" />
+      </label>
+      <label>Senha
+        <input type="password" id="login-senha" required autocomplete="current-password" />
+      </label>
+      <button type="submit" class="botao-grande">Entrar</button>
+      <p id="login-erro" class="mensagem-erro" hidden></p>
+      <p id="login-info" class="mensagem-info">Sem internet? Se você já entrou neste aparelho antes, o login funciona normalmente offline.</p>
+    </form>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <header class="cabecalho">
+    <div class="cabecalho-topo">
+      <h1>Prato Cheio</h1>
+      <div id="indicador-rede" class="indicador-rede"></div>
+    </div>
+    <nav id="nav-principal" class="nav-principal"></nav>
+    <div class="cabecalho-rodape">
+      <span id="info-usuario"></span>
+      <button id="botao-sincronizar" class="botao-link">Sincronizar agora</button>
+      <button id="botao-sair" class="botao-link">Sair</button>
+    </div>
+  </header>
+  <main id="conteudo" class="conteudo"></main>
+</div>
+
+<script src="vendor/dexie.min.js"></script>
+<script src="vendor/supabase.min.js"></script>
+<script src="js/util.js"></script>
+<script src="js/config.js"></script>
+<script src="js/db-local.js"></script>
+<script src="js/cripto.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/sync.js"></script>
+<script src="js/familias.js"></script>
+<script src="js/estoque.js"></script>
+<script src="js/entregas.js"></script>
+<script src="js/relatorios.js"></script>
+<script src="js/app.js"></script>
